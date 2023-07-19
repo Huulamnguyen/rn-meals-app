@@ -38,9 +38,32 @@
 
 - Grid Styles
 - Shadows: shadowColor, shadowOpacity, shadowRadius, shadowOffset
-- Android Ripple Effect
+  ```javascript
+  elevation: 4,
+  shadowColor: "black",
+  shadowOpacity: 0.5,
+  shadowRadius: 8,
+  shadowOffset: { width: 0, height: 6 },
+  overflow: Platform.OS === "android" ? "hidden" : "visible",
+  ```
+- Android Ripple Effect and opacity for IOS
+
+  ```javascript
+  <Pressable
+    android_ripple={{ color: "#ccc" }}
+    style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
+  >
+    //code
+  </Pressable>
+
+  // then
+
+  buttonPressed: {
+    opacity: 0.75,
+  },
+  ```
+
 - Platform API: Platform.OS
-- Implementig Navigation Between two screens:
-  - React Navigation: navigation prop and route prop
+- React Navigation: navigation prop and route prop
 - Styling:
   - flex: 1, take all available space
