@@ -5,7 +5,7 @@ import CategoryGridTile from "../components/CategoryGridTile";
 const CategoriesScreen = ({ navigation }) => {
   const renderCategory = (itemData) => {
     const pressHandler = () => {
-      navigation.navigate("MealsOverview");
+      navigation.navigate("MealsOverview", { categoryId: itemData.item.id });
     };
 
     return (
